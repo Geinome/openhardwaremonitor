@@ -94,7 +94,7 @@ namespace Aga.Controls.Tree
 			if (StructureChanged != null)
 				StructureChanged(this, args);
 		}
-		internal protected virtual void OnNodesChanged(Node parent, int index, Node node)
+		protected internal virtual void OnNodesChanged(Node parent, int index, Node node)
 		{
 			if (NodesChanged != null)
 			{
@@ -104,7 +104,7 @@ namespace Aga.Controls.Tree
 				NodesChanged(this, args);
 			}
 		}
-		internal protected virtual void OnNodeInserted(Node parent, int index, Node node)
+		protected internal virtual void OnNodeInserted(Node parent, int index, Node node)
 		{
 			if (NodesInserted != null)
 			{
@@ -113,7 +113,7 @@ namespace Aga.Controls.Tree
 			}
 
 		}
-		internal protected virtual void OnNodeRemoved(Node parent, int index, Node node)
+		protected internal virtual void OnNodeRemoved(Node parent, int index, Node node)
 		{
 			if (NodesRemoved != null)
 			{

@@ -155,7 +155,7 @@ namespace OpenHardwareMonitor.Hardware.HDD {
       return null;
     }
 
-    protected override sealed void CreateSensors() {
+    protected sealed override void CreateSensors() {
       sensors = new Dictionary<SmartAttribute, Sensor>();
 
       if (smart.IsValid) {

@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenHardwareMonitorReport", "OpenHardwareMonitorReport\OpenHardwareMonitorReport.csproj", "{C0FE1C8B-3D85-4FA9-9343-547AD5DFAFFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenHardwareMonitor.Cli", "OpenHardwareMonitor.Cli\OpenHardwareMonitor.Cli.csproj", "{C0FE1C8B-3D85-4FA9-9343-547AD5DFAFFF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aga.Controls", "External\treeviewadv\Aga.Controls\Aga.Controls.csproj", "{E18261A4-D3F0-4778-B768-97DEA0F2F917}"
 EndProject
