@@ -15,6 +15,7 @@ using System.IO.Ports;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.Heatmaster;
 
@@ -130,7 +131,7 @@ internal class Heatmaster : Hardware, IDisposable
         : base("Heatmaster", new Identifier("heatmaster",
             portName.TrimStart(new[] { '/' }).ToLowerInvariant()), settings)
     {
-        this._portName = portName;
+        _portName = portName;
         try
         {
             _serialPort = new SerialPort(portName, 38400, Parity.None, 8,

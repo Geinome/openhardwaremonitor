@@ -14,13 +14,15 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.49.1" />
     <PackageReference Include="Spectre.Console.Cli.Extensions.DependencyInjection" Version="0.3.0" />
     <PackageReference Include="Spectre.Console.Json" Version="0.49.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenHardwareMonitor\OpenHardwareMonitor.csproj" />
-    <ProjectReference Include="..\OpenHardwareMonitor.Ui\OpenHardwareMonitor.Ui.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Validation\" />

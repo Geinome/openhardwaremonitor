@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenHardwareMonitor;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.HDD;
 
@@ -29,7 +30,7 @@ internal sealed class NvMeGeneric : AbstractStorage
             GetSensorValue getValue)
             : base(name, index, defaultHidden, sensorType, hardware, null, settings)
         {
-            this._getValue = getValue;
+            _getValue = getValue;
         }
 
         public void Update(NvMeHealthInfo health)
@@ -48,7 +49,7 @@ internal sealed class NvMeGeneric : AbstractStorage
         : base(name, info.Revision, "nvme", index, settings)
     {
         _smart = new WindowsNvMeSmart(info.Index);
-        this._info = info;
+        _info = info;
         CreateSensors();
     }
 

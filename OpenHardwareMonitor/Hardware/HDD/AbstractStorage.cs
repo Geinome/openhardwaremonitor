@@ -18,6 +18,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Extensions.Logging;
 using OpenHardwareMonitor;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.HDD;
 
@@ -43,9 +44,9 @@ internal abstract class AbstractStorage : Hardware
         : base(name, new Identifier(id,
             index.ToString(CultureInfo.InvariantCulture)), settings)
     {
-        this.FirmwareRevision = firmwareRevision;
+        FirmwareRevision = firmwareRevision;
 
-        this.Index = index;
+        Index = index;
         _count = 0;
 
         _performanceSensors = new List<(Sensor, double? value)>();

@@ -18,6 +18,7 @@ using System.Linq;
 using System.Text;
 using OpenHardwareMonitor.Collections;
 using OpenHardwareMonitor;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.HDD;
 
@@ -46,9 +47,9 @@ internal abstract class AtaStorage : AbstractStorage
         IEnumerable<SmartAttribute> smartAttributes, ISettings settings)
         : base(name, firmwareRevision, id, index, settings)
     {
-        this._smart = smart;
+        _smart = smart;
 
-        this._smartAttributes = new List<SmartAttribute>(smartAttributes);
+        _smartAttributes = new List<SmartAttribute>(smartAttributes);
 
         CreateSensors();
     }

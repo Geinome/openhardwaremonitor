@@ -12,6 +12,7 @@
 using System.Globalization;
 using System.Text;
 using System.Threading;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.CPU
 {
@@ -173,8 +174,8 @@ namespace OpenHardwareMonitor.Hardware.CPU
 
                 if (newBusClock > 0)
                 {
-                    this._busClock.Value = newBusClock;
-                    ActivateSensor(this._busClock);
+                    _busClock.Value = newBusClock;
+                    ActivateSensor(_busClock);
                 }
             }
         }

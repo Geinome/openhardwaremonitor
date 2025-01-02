@@ -533,7 +533,7 @@ internal class WindowsNvMeSmart : IDisposable
 
     public WindowsNvMeSmart(int driveNumber)
     {
-        this._driveNumber = driveNumber;
+        _driveNumber = driveNumber;
         _requiresAlternateHealthInfo = false;
         _handle = NativeMethods.CreateFile(string.Format(@"\\.\Scsi{0}:", driveNumber), FileAccess.ReadWrite,
             FileShare.ReadWrite, IntPtr.Zero, FileMode.Open, FileAttributes.Normal, IntPtr.Zero);

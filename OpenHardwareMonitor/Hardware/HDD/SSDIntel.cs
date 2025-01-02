@@ -12,6 +12,7 @@
 
 using System.Collections.Generic;
 using OpenHardwareMonitor.Collections;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.HDD;
 

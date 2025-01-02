@@ -25,6 +25,11 @@ using Aga.Controls.Tree.NodeControls;
 using OpenHardwareMonitor.Hardware;
 using OpenHardwareMonitor.Utilities;
 using OpenHardwareMonitor;
+using OpenHardwareMonitor.Nodes;
+using OpenHardwareMonitor.Settings;
+using OpenHardwareMonitor.Temperature;
+using Node = OpenHardwareMonitor.Nodes.Node;
+using TreeModel = OpenHardwareMonitor.Nodes.TreeModel;
 
 namespace OpenHardwareMonitor.GUI
 {

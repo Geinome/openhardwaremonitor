@@ -10,6 +10,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.RAM;
 

@@ -44,7 +44,7 @@ internal class GigabyteTamg
         if (table == null)
             throw new ArgumentNullException("table");
 
-        this._table = table;
+        _table = table;
 
         var index = IndexOf(table, Encoding.ASCII.GetBytes("$HEALTH$"), 0);
 

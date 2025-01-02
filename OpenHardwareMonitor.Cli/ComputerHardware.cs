@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using OpenHardwareMonitor.GUI;
 using OpenHardwareMonitor.Hardware;
+using OpenHardwareMonitor.Nodes;
+using OpenHardwareMonitor.Settings;
+using OpenHardwareMonitor.Temperature;
 
 namespace OpenHardwareMonitor.Cli;
 
@@ -20,7 +22,7 @@ public class ComputerHardware : IDisposable
         _unitManager = new UnitManager(_settings);
         var treeModel = new TreeModel();
         Root = new Node(Environment.MachineName);
-        Root.Image = Utilities.EmbeddedResources.GetImage("computer.png");
+        Root.Image = EmbeddedResources.GetImage("computer.png");
         treeModel.Nodes.Add(Root);
         treeModel.ForceVisible = true;
     }
@@ -34,27 +36,19 @@ public class ComputerHardware : IDisposable
             _computer.Close();
         }
 
-        _computer = new Computer();
-
-        _computer.CpuEnabled = !options.IgnoreMonitorCPU;
-        _computer.FanControllerEnabled = !options.IgnoreMonitorFanController;
-        _computer.GpuEnabled = !options.IgnoreMonitorGPU;
-        _computer.HddEnabled = !options.IgnoreMonitorHDD;
-        _computer.MainboardEnabled = !options.IgnoreMonitorMainboard;
-        _computer.RamEnabled = !options.IgnoreMonitorRAM;
-        _computer.NetworkEnabled = !options.IgnoreMonitorNetwork;
+        _computer = new Computer
+        {
+            CpuEnabled = !options.IgnoreMonitorCPU,
+            FanControllerEnabled = !options.IgnoreMonitorFanController,
+            GpuEnabled = !options.IgnoreMonitorGPU,
+            HddEnabled = !options.IgnoreMonitorHDD,
+            MainboardEnabled = !options.IgnoreMonitorMainboard,
+            RamEnabled = !options.IgnoreMonitorRAM,
+            NetworkEnabled = !options.IgnoreMonitorNetwork
+        };
 
         _computer.HardwareAdded += HardwareAdded;
         _computer.HardwareRemoved += HardwareRemoved;
-
-        // add platform dependent code
-        var platForm = Environment.OSVersion.Platform;
-        if (platForm == PlatformID.Win32NT)
-        {
-            // Windows
-            // not sure if really required: gadget = new OpenHardwareMonitor.Ui.GUI.SensorGadget(computer, settings, unitManager);
-            // wmiProvider = new OpenHardwareMonitor.Ui.WMI.WmiProvider(computer);
-        }
 
         _computer.Open();
 

@@ -53,7 +53,7 @@ public class Identifier : IComparable<Identifier>
             s.Append(extensions[i]);
         }
 
-        this._identifier = s.ToString();
+        _identifier = s.ToString();
     }
 
     public override string ToString()

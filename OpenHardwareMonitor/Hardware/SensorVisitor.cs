@@ -21,7 +21,7 @@ public class SensorVisitor : IVisitor
     {
         if (handler == null)
             throw new ArgumentNullException("handler");
-        this._handler = handler;
+        _handler = handler;
     }
 
     public void VisitComputer(IComputer computer)

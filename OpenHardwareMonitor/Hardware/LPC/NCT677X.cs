@@ -197,10 +197,10 @@ internal class Nct677X : ISuperIo
 
     public Nct677X(Chip chip, byte revision, ushort port, LpcPort lpcPort)
     {
-        this._chip = chip;
-        this._revision = revision;
-        this._port = port;
-        this._lpcPort = lpcPort;
+        _chip = chip;
+        _revision = revision;
+        _port = port;
+        _lpcPort = lpcPort;
 
         if (chip == Chip.Nct610X)
         {

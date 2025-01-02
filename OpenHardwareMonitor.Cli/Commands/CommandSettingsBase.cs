@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using OpenHardwareMonitor.Temperature;
 using Spectre.Console.Cli;
 
 namespace OpenHardwareMonitor.Cli.Commands;
@@ -7,7 +8,7 @@ public class CommandSettingsBase : CommandSettings, IComputerHardwareSettings
 {
     [Description( "Temperature values in Fahrenheit oder Celsius (defaults to Celsius)")]
     [CommandOption("-t|--TemperatureUnit")]
-    public GUI.TemperatureUnit TemperatureUnit { get; set; }
+    public TemperatureUnit TemperatureUnit { get; set; }
 
     [Description("Verbose mode")]
     [CommandOption("-v|--Verbose")]

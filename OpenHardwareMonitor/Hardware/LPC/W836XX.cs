@@ -100,9 +100,9 @@ internal class W836Xx : ISuperIo
 
     public W836Xx(Chip chip, byte revision, ushort address)
     {
-        this._address = address;
-        this._revision = revision;
-        this._chip = chip;
+        _address = address;
+        _revision = revision;
+        _chip = chip;
 
         if (!IsWinbondVendor())
             return;

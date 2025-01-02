@@ -325,10 +325,10 @@ internal class Smbios
 
         public Structure(byte type, ushort handle, byte[] data, string[] strings)
         {
-            this._type = type;
-            this._handle = handle;
-            this._data = data;
-            this._strings = strings;
+            _type = type;
+            _handle = handle;
+            _data = data;
+            _strings = strings;
         }
 
         public byte Type => _type;
@@ -344,8 +344,8 @@ internal class Smbios
         public BiosInformation(string vendor, string version)
             : base(0x00, 0, null, null)
         {
-            this._vendor = vendor;
-            this._version = version;
+            _vendor = vendor;
+            _version = version;
         }
 
         public BiosInformation(byte type, ushort handle, byte[] data,
@@ -373,11 +373,11 @@ internal class Smbios
             string version, string serialNumber, string family)
             : base(0x01, 0, null, null)
         {
-            this._manufacturerName = manufacturerName;
-            this._productName = productName;
-            this._version = version;
-            this._serialNumber = serialNumber;
-            this._family = family;
+            _manufacturerName = manufacturerName;
+            _productName = productName;
+            _version = version;
+            _serialNumber = serialNumber;
+            _family = family;
         }
 
         public SystemInformation(byte type, ushort handle, byte[] data,
@@ -413,10 +413,10 @@ internal class Smbios
             string version, string serialNumber)
             : base(0x02, 0, null, null)
         {
-            this._manufacturerName = manufacturerName;
-            this._productName = productName;
-            this._version = version;
-            this._serialNumber = serialNumber;
+            _manufacturerName = manufacturerName;
+            _productName = productName;
+            _version = version;
+            _serialNumber = serialNumber;
         }
 
         public BaseBoardInformation(byte type, ushort handle, byte[] data,

@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.CPU;
 
@@ -85,20 +86,20 @@ internal sealed class Amd17Cpu : Amdcpu
             "CPU Package", 0, SensorType.Temperature, this, new[]
             {
                 new ParameterDescription("Offset [°C]", "Temperature offset.", 0)
-            }, this.Settings);
+            }, Settings);
 
         if (_tctlOffset != 0.0f)
             _tctlTemperature = new Sensor(
                 "CPU Tctl", 1, true, SensorType.Temperature, this, new[]
                 {
                     new ParameterDescription("Offset [°C]", "Temperature offset.", 0)
-                }, this.Settings);
+                }, Settings);
 
         _ccdMaxTemperature = new Sensor(
-            "CPU CCD Max", 2, SensorType.Temperature, this, this.Settings);
+            "CPU CCD Max", 2, SensorType.Temperature, this, Settings);
 
         _ccdAvgTemperature = new Sensor(
-            "CPU CCD Average", 3, SensorType.Temperature, this, this.Settings);
+            "CPU CCD Average", 3, SensorType.Temperature, this, Settings);
 
         switch (Model & 0xf0)
         {
@@ -118,7 +119,7 @@ internal sealed class Amd17Cpu : Amdcpu
                 new[]
                 {
                     new ParameterDescription("Offset [°C]", "Temperature offset.", 0)
-                }, this.Settings);
+                }, Settings);
 
         if (Ring0.Rdmsr(MsrRaplPwrUnit, out var eax, out _))
             _energyUnitMultiplier = 1.0f / (1 << (int)((eax >> 8) & 0x1F));
@@ -320,7 +321,7 @@ internal sealed class Amd17Cpu : Amdcpu
 
         public Core(int index, Cpuid[] threads, Amd17Cpu cpu, ISettings settings)
         {
-            this._cpu = cpu;
+            _cpu = cpu;
             _affinity = threads[0].Affinity;
 
             var coreString = cpu.CoreString(index);

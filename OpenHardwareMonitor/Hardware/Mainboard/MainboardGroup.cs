@@ -9,6 +9,7 @@
 */
 
 using System.Collections.Generic;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.Mainboard;
 

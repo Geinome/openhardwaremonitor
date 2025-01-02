@@ -1,11 +1,11 @@
 ﻿/*
- 
+
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
- 
+
   Copyright (C) 2009-2013 Michael Möller <mmoeller@openhardwaremonitor.org>
-	
+
 */
 
 using System;
@@ -19,6 +19,8 @@ using OxyPlot.Axes;
 using OxyPlot.WindowsForms;
 using OxyPlot.Series;
 using OpenHardwareMonitor.Collections;
+using OpenHardwareMonitor.Settings;
+using OpenHardwareMonitor.Temperature;
 
 namespace OpenHardwareMonitor.GUI {
   public class PlotPanel : UserControl {
@@ -201,7 +203,7 @@ namespace OpenHardwareMonitor.GUI {
         if (sensor.SensorType == SensorType.Temperature) {
           series.ItemsSource = sensor.Values.Select(value => new DataPoint(
             (now - value.Time).TotalSeconds,
-            unitManager.TemperatureUnit == TemperatureUnit.Celsius ? 
+            unitManager.TemperatureUnit == TemperatureUnit.Celsius ?
               value.Value : UnitManager.CelsiusToFahrenheit(value.Value).Value
           ));
         } else {
@@ -221,7 +223,7 @@ namespace OpenHardwareMonitor.GUI {
         var axis = pair.Value;
         var type = pair.Key;
         axis.IsAxisVisible = types.Contains(type);
-      } 
+      }
 
       UpdateAxesPosition();
       InvalidatePlot();
@@ -240,7 +242,7 @@ namespace OpenHardwareMonitor.GUI {
           axis.EndPosition = start;
           axis.PositionTier = 0;
           axis.MajorGridlineStyle = LineStyle.Solid;
-          axis.MinorGridlineStyle = LineStyle.Solid;   
+          axis.MinorGridlineStyle = LineStyle.Solid;
         }
       } else {
         var tier = 0;
@@ -258,7 +260,7 @@ namespace OpenHardwareMonitor.GUI {
             axis.PositionTier = 0;
           }
           axis.MajorGridlineStyle = LineStyle.None;
-          axis.MinorGridlineStyle = LineStyle.None;          
+          axis.MinorGridlineStyle = LineStyle.None;
         }
       }
 

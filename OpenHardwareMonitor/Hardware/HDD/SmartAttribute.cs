@@ -66,7 +66,7 @@ internal class SmartAttribute
     {
         Identifier = identifier;
         Name = name;
-        this._rawValueConversion = rawValueConversion;
+        _rawValueConversion = rawValueConversion;
         SensorType = sensorType;
         SensorChannel = sensorChannel;
         SensorName = sensorName;

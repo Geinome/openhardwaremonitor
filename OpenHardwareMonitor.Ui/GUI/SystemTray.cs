@@ -14,6 +14,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using OpenHardwareMonitor.Hardware;
+using OpenHardwareMonitor.Settings;
+using OpenHardwareMonitor.Temperature;
 using OpenHardwareMonitor.Utilities;
 
 namespace OpenHardwareMonitor.GUI {

@@ -12,6 +12,7 @@
 using System;
 using System.Globalization;
 using System.Text;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.Nvidia;
 
@@ -41,9 +42,9 @@ internal class NvidiaGpu : Hardware
         : base(GetName(handle), new Identifier("nvidiagpu",
             adapterIndex.ToString(CultureInfo.InvariantCulture)), settings)
     {
-        this._adapterIndex = adapterIndex;
-        this._handle = handle;
-        this._displayHandle = displayHandle;
+        _adapterIndex = adapterIndex;
+        _handle = handle;
+        _displayHandle = displayHandle;
 
         var thermalSettings = GetThermalSettings();
         _temperatures = new Sensor[thermalSettings.Count];

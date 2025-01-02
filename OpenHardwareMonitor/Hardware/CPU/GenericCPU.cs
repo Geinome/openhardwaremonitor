@@ -15,6 +15,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.CPU;
 
@@ -59,7 +60,7 @@ internal class GenericCpu : Hardware
         : base(cpuid[0][0].Name, CreateIdentifier(cpuid[0][0].Vendor,
             processorIndex), settings)
     {
-        this.Cpuid = cpuid;
+        Cpuid = cpuid;
 
         _vendor = cpuid[0][0].Vendor;
 
@@ -67,7 +68,7 @@ internal class GenericCpu : Hardware
         Model = cpuid[0][0].Model;
         Stepping = cpuid[0][0].Stepping;
 
-        this.ProcessorIndex = processorIndex;
+        ProcessorIndex = processorIndex;
         CoreCount = cpuid.Length;
 
         // check if processor has MSRs

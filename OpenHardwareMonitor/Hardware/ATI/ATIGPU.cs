@@ -13,6 +13,7 @@ using System.Globalization;
 using System.Text;
 using Microsoft.Extensions.Logging;
 using OpenHardwareMonitor;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.ATI;
 
@@ -58,11 +59,11 @@ internal sealed class Atigpu : Hardware
             adapterIndex.ToString(CultureInfo.InvariantCulture)), settings)
     {
         _logger = this.GetCurrentClassLogger();
-        this._adapterIndex = adapterIndex;
-        this._busNumber = busNumber;
-        this._deviceNumber = deviceNumber;
+        _adapterIndex = adapterIndex;
+        _busNumber = busNumber;
+        _deviceNumber = deviceNumber;
 
-        this._context = context;
+        _context = context;
 
         var status = Adl.AdlOverdriveCaps(adapterIndex, out var supported, out var enabled,
             out _overdriveVersion);

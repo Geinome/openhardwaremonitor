@@ -10,6 +10,7 @@
 
 using System;
 using System.Globalization;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware;
 
@@ -22,9 +23,9 @@ internal struct ParameterDescription
     public ParameterDescription(string name, string description,
         float defaultValue)
     {
-        this._name = name;
-        this._description = description;
-        this._defaultValue = defaultValue;
+        _name = name;
+        _description = description;
+        _defaultValue = defaultValue;
     }
 
     public string Name => _name;
@@ -45,9 +46,9 @@ internal class Parameter : IParameter
     public Parameter(ParameterDescription description, ISensor sensor,
         ISettings settings)
     {
-        this._sensor = sensor;
-        this._description = description;
-        this._settings = settings;
+        _sensor = sensor;
+        _description = description;
+        _settings = settings;
         _isDefault = !settings.Contains(Identifier.ToString());
         _value = description.DefaultValue;
         if (!_isDefault)
@@ -74,7 +75,7 @@ internal class Parameter : IParameter
         set
         {
             _isDefault = false;
-            this._value = value;
+            _value = value;
             _settings.SetValue(Identifier.ToString(), value.ToString(
                 CultureInfo.InvariantCulture));
         }
@@ -90,7 +91,7 @@ internal class Parameter : IParameter
             _isDefault = value;
             if (value)
             {
-                this._value = _description.DefaultValue;
+                _value = _description.DefaultValue;
                 _settings.Remove(Identifier.ToString());
             }
         }

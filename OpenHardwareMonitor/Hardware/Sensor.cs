@@ -14,6 +14,7 @@ using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using OpenHardwareMonitor.Collections;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware;
 
@@ -57,18 +58,18 @@ internal class Sensor : ISensor
         SensorType sensorType, Hardware hardware,
         ParameterDescription[] parameterDescriptions, ISettings settings)
     {
-        this._index = index;
-        this._defaultHidden = defaultHidden;
-        this._sensorType = sensorType;
-        this._hardware = hardware;
+        _index = index;
+        _defaultHidden = defaultHidden;
+        _sensorType = sensorType;
+        _hardware = hardware;
         var parameters = new Parameter[parameterDescriptions == null ? 0 : parameterDescriptions.Length];
         for (var i = 0; i < parameters.Length; i++)
             parameters[i] = new Parameter(parameterDescriptions[i], this, settings);
-        this._parameters = parameters;
+        _parameters = parameters;
 
-        this._settings = settings;
+        _settings = settings;
         _defaultName = name;
-        this._name = settings.GetValue(
+        _name = settings.GetValue(
             new Identifier(Identifier, "name").ToString(), name);
 
         GetSensorValuesFromSettings();

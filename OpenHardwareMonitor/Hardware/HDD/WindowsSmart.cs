@@ -251,7 +251,7 @@ internal class WindowsSmart : ISmart
 
     public WindowsSmart(int driveNumber)
     {
-        this._driveNumber = driveNumber;
+        _driveNumber = driveNumber;
         _handle = NativeMethods.CreateFile(@"\\.\PhysicalDrive" + driveNumber, FileAccess.ReadWrite,
             FileShare.ReadWrite, IntPtr.Zero, FileMode.Open, FileAttributes.Normal, IntPtr.Zero);
         _logger = this.GetCurrentClassLogger();

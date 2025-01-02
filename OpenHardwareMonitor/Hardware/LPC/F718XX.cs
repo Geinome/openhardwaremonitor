@@ -109,8 +109,8 @@ internal class F718Xx : ISuperIo
 
     public F718Xx(Chip chip, ushort address)
     {
-        this._address = address;
-        this._chip = chip;
+        _address = address;
+        _chip = chip;
 
         _voltages = new double?[chip == Chip.F71858 ? 3 : 9];
         _temperatures = new double?[chip == Chip.F71808E ? 2 : 3];

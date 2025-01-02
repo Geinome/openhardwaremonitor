@@ -14,6 +14,7 @@ using System.Globalization;
 using System.Text;
 using Microsoft.Extensions.Logging;
 using OpenHardwareMonitor;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.ATI;
 

@@ -186,12 +186,12 @@ internal class It87Xx : ISuperIo
 
     public It87Xx(Chip chip, ushort address, ushort gpioAddress, byte version)
     {
-        this._address = address;
-        this._chip = chip;
-        this._version = version;
+        _address = address;
+        _chip = chip;
+        _version = version;
         _addressReg = (ushort)(address + AddressRegisterOffset);
         _dataReg = (ushort)(address + DataRegisterOffset);
-        this._gpioAddress = gpioAddress;
+        _gpioAddress = gpioAddress;
 
         // Check vendor id
         bool valid;

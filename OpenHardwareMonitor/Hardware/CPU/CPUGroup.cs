@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.CPU;
 
@@ -101,7 +102,7 @@ internal class CpuGroup : IGroup
     public CpuGroup(ISettings settings)
     {
         var processorThreads = GetProcessorThreads();
-        this._threads = new Cpuid[processorThreads.Length][][];
+        _threads = new Cpuid[processorThreads.Length][][];
 
         var index = 0;
         foreach (var threads in processorThreads)
@@ -111,7 +112,7 @@ internal class CpuGroup : IGroup
 
             var coreThreads = GroupThreadsByCore(threads);
 
-            this._threads[index] = coreThreads;
+            _threads[index] = coreThreads;
 
             switch (threads[0].Vendor)
             {

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using OpenHardwareMonitor.GUI;
 using OpenHardwareMonitor.Hardware;
 using OpenHardwareMonitor;
+using OpenHardwareMonitor.Nodes;
 
 namespace OpenHardwareMonitor.Utilities
 {

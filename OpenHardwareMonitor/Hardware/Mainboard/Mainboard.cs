@@ -11,6 +11,7 @@
 using System;
 using System.Text;
 using OpenHardwareMonitor.Hardware.LPC;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.Mainboard;
 
@@ -26,8 +27,8 @@ internal class Mainboard : IHardware
 
     public Mainboard(Smbios smbios, ISettings settings)
     {
-        this._settings = settings;
-        this._smbios = smbios;
+        _settings = settings;
+        _smbios = smbios;
 
         var manufacturer = smbios.Board == null
             ? Manufacturer.Unknown

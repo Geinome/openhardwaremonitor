@@ -364,7 +364,7 @@ internal class DebugSmart : ISmart
 
     public DebugSmart(int driveNumber)
     {
-        this._driveNumber = driveNumber;
+        _driveNumber = driveNumber;
     }
 
     public bool IsValid => true;

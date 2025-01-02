@@ -11,6 +11,7 @@
 using System;
 using System.Globalization;
 using System.Text;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.CPU;
 
@@ -164,7 +165,7 @@ internal sealed class IntelCpu : GenericCpu
                         break;
                     case 0x1A: // Intel Core i7 LGA1366 (45nm)
                     case 0x1E: // Intel Core i5, i7 LGA1156 (45nm)
-                    case 0x1F: // Intel Core i5, i7 
+                    case 0x1F: // Intel Core i5, i7
                     case 0x25: // Intel Core i3, i5, i7 LGA1156 (32nm)
                     case 0x2C: // Intel Core i7 LGA1366 (32nm) 6 Core
                     case 0x2E: // Intel Xeon Processor 7500 series (45nm)
@@ -182,7 +183,7 @@ internal sealed class IntelCpu : GenericCpu
                         _microarchitecture = Microarchitecture.IvyBridge;
                         tjMax = GetTjMaxFromMsr();
                         break;
-                    case 0x3C: // Intel Core i5, i7 4xxx LGA1150 (22nm)              
+                    case 0x3C: // Intel Core i5, i7 4xxx LGA1150 (22nm)
                     case 0x3F: // Intel Xeon E5-2600/1600 v3, Core i7-59xx
                     // LGA2011-v3, Haswell-E (22nm)
                     case 0x45: // Intel Core i5, i7 4xxxU (22nm)
@@ -237,7 +238,7 @@ internal sealed class IntelCpu : GenericCpu
                         _microarchitecture = Microarchitecture.CannonLake;
                         tjMax = GetTjMaxFromMsr();
                         break;
-                    case 0x7D: // Intel Core i3, i5, i7 10xxGx (10nm) 
+                    case 0x7D: // Intel Core i3, i5, i7 10xxGx (10nm)
                     case 0x7E:
                     case 0x6A: // Intel Xeon (10nm)
                     case 0x6C:

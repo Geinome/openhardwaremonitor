@@ -76,7 +76,7 @@ internal class CpuLoad
 
     public CpuLoad(Cpuid[][] cpuid)
     {
-        this._cpuid = cpuid;
+        _cpuid = cpuid;
         _coreLoads = new double[cpuid.Length];
         _totalLoad = 0;
         try

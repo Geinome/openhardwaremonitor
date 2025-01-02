@@ -97,9 +97,9 @@ internal class Cpuid
 
     private Cpuid(int group, int thread, GroupAffinity affinity)
     {
-        this._group = group;
-        this._thread = thread;
-        this._affinity = affinity;
+        _group = group;
+        _thread = thread;
+        _affinity = affinity;
 
         uint maxCpuid = 0;
         uint maxCpuidExt = 0;

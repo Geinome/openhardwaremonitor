@@ -40,8 +40,8 @@ public struct SensorValue
 
     public SensorValue(double value, DateTime time)
     {
-        this._value = value;
-        this._time = time;
+        _value = value;
+        _time = time;
     }
 
     public double Value => _value;

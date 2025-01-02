@@ -16,6 +16,7 @@ using System.Security;
 using System.Text;
 using System.Threading;
 using Microsoft.Win32;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.Heatmaster;
 

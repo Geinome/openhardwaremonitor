@@ -175,8 +175,8 @@ internal class LmSensors
 
         public LmChip(Chip chip, string path)
         {
-            this._path = path;
-            this._chip = chip;
+            _path = path;
+            _chip = chip;
 
             var voltagePaths = Directory.GetFiles(path, "in*_input");
             _voltages = new double?[voltagePaths.Length];

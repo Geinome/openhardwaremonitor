@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.TBalancer;
 
@@ -46,8 +47,8 @@ internal class Balancer : Hardware
         : base("T-Balancer bigNG", new Identifier("bigng",
             portIndex.ToString(CultureInfo.InvariantCulture)), settings)
     {
-        this._portIndex = portIndex;
-        this._protocolVersion = protocolVersion;
+        _portIndex = portIndex;
+        _protocolVersion = protocolVersion;
 
         var parameter = new[]
         {

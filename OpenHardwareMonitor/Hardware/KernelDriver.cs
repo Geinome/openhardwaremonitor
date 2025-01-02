@@ -24,7 +24,7 @@ internal class KernelDriver
 
     public KernelDriver(string id)
     {
-        this._id = id;
+        _id = id;
     }
 
     public bool Install(string path, out string errorMessage)

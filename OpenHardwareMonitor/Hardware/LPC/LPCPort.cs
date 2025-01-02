@@ -17,8 +17,8 @@ internal class LpcPort
 
     public LpcPort(ushort registerPort, ushort valuePort)
     {
-        this._registerPort = registerPort;
-        this._valuePort = valuePort;
+        _registerPort = registerPort;
+        _valuePort = valuePort;
     }
 
     public ushort RegisterPort => _registerPort;

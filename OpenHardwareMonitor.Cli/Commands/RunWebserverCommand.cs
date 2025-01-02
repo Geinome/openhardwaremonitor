@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using OpenHardwareMonitor.Cli.Helpers;
 using OpenHardwareMonitor.Hardware;
-using OpenHardwareMonitor.Utilities;
 using Spectre.Console.Cli;
 
 namespace OpenHardwareMonitor.Cli.Commands;

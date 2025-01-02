@@ -8,9 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
-using OpenHardwareMonitor.Hardware;
+using OpenHardwareMonitor.Settings;
 
-namespace LibreHardwareMonitor.Hardware.Network;
+namespace OpenHardwareMonitor.Hardware.Network;
 
 internal class NetworkGroup : IGroup
 {

@@ -6,9 +6,9 @@
 using System;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
-using OpenHardwareMonitor.Hardware;
+using OpenHardwareMonitor.Settings;
 
-namespace LibreHardwareMonitor.Hardware.Network;
+namespace OpenHardwareMonitor.Hardware.Network;
 
 internal sealed class Network : OpenHardwareMonitor.Hardware.Hardware
 {

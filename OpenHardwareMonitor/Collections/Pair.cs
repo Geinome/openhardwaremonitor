@@ -20,8 +20,8 @@ public struct Pair<TF, TS>
 
     public Pair(TF first, TS second)
     {
-        this._first = first;
-        this._second = second;
+        _first = first;
+        _second = second;
     }
 
     public TF First

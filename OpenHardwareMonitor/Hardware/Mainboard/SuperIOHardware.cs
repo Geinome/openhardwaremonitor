@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using OpenHardwareMonitor.Hardware.LPC;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware.Mainboard;
 
@@ -46,8 +47,8 @@ internal sealed class SuperIoHardware : Hardware
         : base(ChipName.GetName(superIo.Chip), new Identifier("lpc",
             superIo.Chip.ToString().ToLowerInvariant()), settings)
     {
-        this._mainboard = mainboard;
-        this._superIo = superIo;
+        _mainboard = mainboard;
+        _superIo = superIo;
 
         IList<Voltage> v;
         IList<Temperature> t;

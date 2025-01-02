@@ -8,6 +8,8 @@
 
 */
 
+using OpenHardwareMonitor.Settings;
+
 namespace OpenHardwareMonitor.Hardware.HDD;
 
 using System.Collections.Generic;

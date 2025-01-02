@@ -19,7 +19,7 @@ public class ReadOnlyArray<T> : IReadOnlyArray<T>
 
     public ReadOnlyArray(T[] array)
     {
-        this._array = array;
+        _array = array;
     }
 
     public T this[int index] => _array[index];

@@ -15,7 +15,8 @@ using System.IO;
 using System.Linq;
 using System.Security.Permissions;
 using System.Reflection;
-using LibreHardwareMonitor.Hardware.Network;
+using OpenHardwareMonitor.Hardware.Network;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware;
 
@@ -43,7 +44,7 @@ public class Computer : IComputer
 
     public Computer(ISettings settings)
     {
-        this._settings = settings ?? new Settings();
+        _settings = settings ?? new Settings();
     }
 
     private void Add(IGroup group)

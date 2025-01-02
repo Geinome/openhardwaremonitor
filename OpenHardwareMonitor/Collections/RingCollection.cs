@@ -35,10 +35,10 @@ public class RingCollection<T> : IEnumerable<T>
     {
         if (capacity < 0)
             throw new ArgumentOutOfRangeException("capacity");
-        this._array = new T[capacity];
-        this._head = 0;
-        this._tail = 0;
-        this._size = 0;
+        _array = new T[capacity];
+        _head = 0;
+        _tail = 0;
+        _size = 0;
     }
 
     public int Capacity
@@ -60,9 +60,9 @@ public class RingCollection<T> : IEnumerable<T>
                 }
             }
 
-            this._array = newArray;
-            this._head = 0;
-            this._tail = _size == value ? 0 : _size;
+            _array = newArray;
+            _head = 0;
+            _tail = _size == value ? 0 : _size;
         }
     }
 
@@ -78,9 +78,9 @@ public class RingCollection<T> : IEnumerable<T>
             Array.Clear(_array, _head, _array.Length - _head);
         }
 
-        this._head = 0;
-        this._tail = 0;
-        this._size = 0;
+        _head = 0;
+        _tail = 0;
+        _size = 0;
     }
 
     public void Append(T item)
@@ -187,18 +187,18 @@ public class RingCollection<T> : IEnumerable<T>
 
         public Enumerator(RingCollection<T> collection)
         {
-            this._collection = collection;
-            this._index = -1;
+            _collection = collection;
+            _index = -1;
         }
 
         public void Dispose()
         {
-            this._index = -2;
+            _index = -2;
         }
 
         public void Reset()
         {
-            this._index = -1;
+            _index = -1;
         }
 
         public T Current

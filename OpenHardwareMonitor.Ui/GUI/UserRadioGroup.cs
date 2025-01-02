@@ -11,6 +11,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using OpenHardwareMonitor.Settings;
 using OpenHardwareMonitor.Utilities;
 
 namespace OpenHardwareMonitor.GUI {

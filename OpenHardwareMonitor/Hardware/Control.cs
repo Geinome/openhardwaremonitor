@@ -10,6 +10,7 @@
 
 using System;
 using System.Globalization;
+using OpenHardwareMonitor.Settings;
 
 namespace OpenHardwareMonitor.Hardware;
 
@@ -28,9 +29,9 @@ internal class Control : IControl
         float maxSoftwareValue)
     {
         _identifier = new Identifier(sensor.Identifier, "control");
-        this._settings = settings;
-        this._minSoftwareValue = minSoftwareValue;
-        this._maxSoftwareValue = maxSoftwareValue;
+        _settings = settings;
+        _minSoftwareValue = minSoftwareValue;
+        _maxSoftwareValue = maxSoftwareValue;
 
         if (!float.TryParse(settings.GetValue(
                     new Identifier(_identifier, "value").ToString(), "0"),
@@ -43,9 +44,9 @@ internal class Control : IControl
                     ((int)ControlMode.Undefined).ToString(CultureInfo.InvariantCulture)),
                 NumberStyles.Integer, CultureInfo.InvariantCulture,
                 out mode))
-            this._mode = ControlMode.Undefined;
+            _mode = ControlMode.Undefined;
         else
-            this._mode = (ControlMode)mode;
+            _mode = (ControlMode)mode;
     }
 
     public Identifier Identifier => _identifier;
