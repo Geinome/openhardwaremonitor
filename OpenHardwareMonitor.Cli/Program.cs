@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using OpenHardwareMonitor;
 using OpenHardwareMonitor.Cli;
 using OpenHardwareMonitor.Cli.Commands;
 using OpenHardwareMonitor.Cli.Interceptors;
@@ -7,7 +9,10 @@ using Spectre.Console.Cli;
 using Spectre.Console.Cli.Extensions.DependencyInjection;
 
 var services = new ServiceCollection();
-services.AddLogging();
+services.AddLogging(options =>
+{
+    options.AddConsole();
+});
 services.AddSingleton<ComputerHardware>();
 services.AddSingleton<AdministratorPrivilegesService>();
 

@@ -36,12 +36,12 @@ public class ComputerHardware : IDisposable
 
         _computer = new Computer();
 
-        _computer.CPUEnabled = !options.IgnoreMonitorCPU;
+        _computer.CpuEnabled = !options.IgnoreMonitorCPU;
         _computer.FanControllerEnabled = !options.IgnoreMonitorFanController;
-        _computer.GPUEnabled = !options.IgnoreMonitorGPU;
-        _computer.HDDEnabled = !options.IgnoreMonitorHDD;
+        _computer.GpuEnabled = !options.IgnoreMonitorGPU;
+        _computer.HddEnabled = !options.IgnoreMonitorHDD;
         _computer.MainboardEnabled = !options.IgnoreMonitorMainboard;
-        _computer.RAMEnabled = !options.IgnoreMonitorRAM;
+        _computer.RamEnabled = !options.IgnoreMonitorRAM;
         _computer.NetworkEnabled = !options.IgnoreMonitorNetwork;
 
         _computer.HardwareAdded += HardwareAdded;
@@ -52,8 +52,8 @@ public class ComputerHardware : IDisposable
         if (platForm == PlatformID.Win32NT)
         {
             // Windows
-            // not sure if really required: gadget = new OpenHardwareMonitor.GUI.SensorGadget(computer, settings, unitManager);
-            // wmiProvider = new OpenHardwareMonitor.WMI.WmiProvider(computer);
+            // not sure if really required: gadget = new OpenHardwareMonitor.Ui.GUI.SensorGadget(computer, settings, unitManager);
+            // wmiProvider = new OpenHardwareMonitor.Ui.WMI.WmiProvider(computer);
         }
 
         _computer.Open();
