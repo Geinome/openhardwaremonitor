@@ -1,12 +1,15 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OpenHardwareMonitor.Cli;
 using OpenHardwareMonitor.Cli.Commands;
+using OpenHardwareMonitor.Cli.Interceptors;
+using OpenHardwareMonitor.Cli.Services;
 using Spectre.Console.Cli;
 using Spectre.Console.Cli.Extensions.DependencyInjection;
 
 var services = new ServiceCollection();
 services.AddLogging();
 services.AddSingleton<ComputerHardware>();
+services.AddSingleton<AdministratorPrivilegesService>();
 
 using var registrar = new DependencyInjectionRegistrar(services);
 

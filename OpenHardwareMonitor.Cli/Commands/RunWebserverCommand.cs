@@ -4,6 +4,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using OpenHardwareMonitor.Cli.Helpers;
 using OpenHardwareMonitor.Hardware;
 using OpenHardwareMonitor.Utilities;
 using Spectre.Console.Cli;
@@ -57,7 +58,7 @@ public class RunWebserverCommand : AsyncCommand<RunWebserverCommand.Settings>
             // output connection details to console and logfile
             _logger.LogInformation("HTTP webserver started at port {Port}", settings.Port);
             _logger.LogInformation("It is available at these addresses:");
-            foreach (IPAddress ip in Utility.LocalIpAddresses())
+            foreach (IPAddress ip in NetworkHelper.LocalIpAddresses())
             {
                 _logger.LogInformation("http://{Ip}:{Port}/", ip, settings.Port);
             }
