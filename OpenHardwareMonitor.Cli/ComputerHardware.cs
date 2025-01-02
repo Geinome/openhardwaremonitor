@@ -6,7 +6,7 @@ using OpenHardwareMonitor.Hardware;
 
 namespace OpenHardwareMonitor.Cli;
 
-internal class ComputerHardware : IDisposable
+public class ComputerHardware : IDisposable
 {
     private readonly PersistentSettings _settings;
     private readonly UnitManager _unitManager;
@@ -27,7 +27,7 @@ internal class ComputerHardware : IDisposable
 
     public Node Root { get; set; }
 
-    public Computer ComputerDiagnostics(CommandLineOptions.OptionsBase options)
+    public Computer ComputerDiagnostics(IComputerHardwareSettings options)
     {
         if (_computer != null)
         {

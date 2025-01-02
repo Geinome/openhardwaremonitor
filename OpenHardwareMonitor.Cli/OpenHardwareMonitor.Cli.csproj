@@ -7,15 +7,22 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <NoWarn>1701;1702;CA1416;</NoWarn>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\Properties\AssemblyVersion.cs" Link="Properties\AssemblyVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="Spectre.Console.Cli" Version="0.49.1" />
+    <PackageReference Include="Spectre.Console.Cli.Extensions.DependencyInjection" Version="0.3.0" />
+    <PackageReference Include="Spectre.Console.Json" Version="0.49.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenHardwareMonitorLib\OpenHardwareMonitorLib.csproj" />
     <ProjectReference Include="..\OpenHardwareMonitor\OpenHardwareMonitor.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Validation\" />
   </ItemGroup>
 </Project>
